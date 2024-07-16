@@ -20,30 +20,7 @@ const handleLogin = async (user, pass) => {
 
 const getUsers = async () => {
     try {
-        //const response = await axios.get('fakeapi');
-        const response = {
-            data: [
-                {
-                    id: 1,
-                    name: 'muhammad fake',
-                    email: 'a@b.cl',
-                    status: true
-                },
-
-                {
-                    id: 2,
-                    name: 'muhammed fake',
-                    email: 'b@b.cl',
-                    status: true
-                },
-                {
-                    id: 3,
-                    name: 'muhammid fake',
-                    email: 'c@b.cl',
-                    status: true
-                },
-            ]
-        }
+        const response = await axios.get('http://localhost:3001/api/v1/users/getAllUsers');
         return response.data;
     } catch (e) {
         console.error(e);
